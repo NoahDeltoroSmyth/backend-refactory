@@ -15,10 +15,7 @@ async function createOrder({ product, quantity }) {
 
 // TODO: Remove this function & use the Order model
 async function getOrderById(id) {
-  const { rows } = await pool.query(
-    'SELECT * FROM orders WHERE id=$1;',
-    [id]
-  );
+  const { rows } = await pool.query('SELECT * FROM orders WHERE id=$1;', [id]);
 
   if (!rows[0]) return null;
 
